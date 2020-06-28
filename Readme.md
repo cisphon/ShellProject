@@ -15,5 +15,6 @@ Example usage for the common "ls" command:
 	```
 4. You can also put options on the commands like so: 
 	```bash
-        /bin/ls -l
+   /bin/ls -l
 	```
+
