@@ -19,7 +19,7 @@ std::vector<std::string> split(const std::string& s, char delimiter)
     return tokens;
 }
 
-// converts a string into a classic c-style string.
+// converts a string array into a classic c-style char**.
 char** convert(vector<string> words)
 {
     char ** arr = new char*[words.size()];
@@ -37,7 +37,7 @@ int main()
     {
         string line;
         cout << "shell=> ";
-        cin >> line; // take input into line.
+        getline(cin, line); // get the line of text from the user.
 
         // split the line up by the spaces.
         vector<string> words = split(line, ' ');
@@ -50,10 +50,10 @@ int main()
         }
         else if (pid == 0) // if we are in the child process
         {
-            // convert string into c-style string.
+            // convert string into c-style char*
             const char *abs_path_to_exec = words[0].c_str();
 
-            // convert strings into c-style char array of strings.
+            // convert vector of strings into c-style char**
             char ** arr = convert(words);
 
             // execute whatever command
